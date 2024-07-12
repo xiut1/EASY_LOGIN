@@ -1,0 +1,57 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+
+    .modalBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        width: 100%;
+        max-width: 400px;
+        border-radius: 20px;
+        overflow: hidden;
+
+        .modalCont {
+            padding: 20px;
+
+            .loginButton {
+                padding: 10px 0;
+                width: 100%;
+                border: none;
+                border-radius: 10px;
+
+                & + .loginButton {
+                    margin-top: 10px;
+                }
+
+                &.github {
+                    color: #fff;
+                    background: #191d21;
+                }
+
+                &.naver {
+                    background: #00c73c;
+                }
+
+                &.kakao {
+                    background: #fae300;
+                }
+            }
+        }
+
+        .closeButton {
+            width: 100%;
+            background: #ddd;
+            border: none;
+            padding: 15px;
+        }
+    }
+}
+
+
