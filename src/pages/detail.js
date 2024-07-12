@@ -5,7 +5,7 @@ export default function Detail() {
 
   return (
     <>
-      {status !== "loading" && (
+      {status !== "loading" && status !== "unauthenticated" && (
         <>
           <div>
             <div>
