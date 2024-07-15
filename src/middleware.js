@@ -2,14 +2,20 @@ import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 export async function middleware(req) {
-  // const token = await getToken({ req });
-  // const url = req.nextUrl.clone();
-  // console.log(token);
+  // 요청에 포함된 URL을 복사하여 'nextUrl' 변수에 저장한다
+  const nextUrl = req.nextUrl.clone();
 
-  // if (!token) {
-  //   // TODO : 토큰이 업을때 로그인페이지로 보내고 (login폴더로 페이지 하나 따야함)
-  //   // url.pathname = "/login";
-  //   // 토큰이 있을때 그냥 보내기
-  //   // return NextResponse.redirect(url);
-  // }
+  const token = await getToken({ req });
+
+  // 토큰이 없으면, 'nextUrl.pathname'을 "/login"으로 보내버린다.
+  if (!token) {
+    nextUrl.pathname = "/login";
+    return NextResponse.redirect(nextUrl);
+    // NextResponse.redirect('/login')로 사용하면 될거같지만 "/" 부분이 "%2F"로 인코딩되어 에러를 발생시킴.
+  }
 }
+
+export const config = {
+  // 배열에 명시된 경로를 가진 요청에 미들웨어가 적용되도록 설정한다.
+  matcher: ["/", "/detail"],
+};

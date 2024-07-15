@@ -29,7 +29,7 @@ export default function Login() {
           </button>
         </div>
         <button className={styles.closeButton} onClick={() => router.push("/")}>
-          닫기
+          CLOSE
         </button>
       </div>
     </div>
