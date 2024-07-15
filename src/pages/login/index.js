@@ -10,19 +10,19 @@ export default function Login() {
         <div className={styles.modalCont}>
           <button
             className={`${styles.loginButton} ${styles.github}`}
-            onClick={() => signIn("github", { callbackUrl: "/detail" })}
+            onClick={() => signIn("github", { callbackUrl: process.env.NEXT_PUBLIC_APP_URL + '/detail' })}
           >
             GITHUB
           </button>
           <button
             className={`${styles.loginButton} ${styles.naver}`}
-            onClick={() => signIn("naver", { callbackUrl: "/detail" })}
+            onClick={() => signIn("naver", { callbackUrl: process.env.NEXT_PUBLIC_APP_URL + '/detail' })}
           >
             NAVER
           </button>
           <button
             className={`${styles.loginButton} ${styles.kakao}`}
-            onClick={() => signIn("kakao", { callbackUrl: "/detail" })}
+            onClick={() => signIn("kakao", { callbackUrl: process.env.NEXT_PUBLIC_APP_URL + '/detail' })}
           >
             KAKAO
           </button>
