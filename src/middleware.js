@@ -2,8 +2,8 @@ import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 export async function middleware(req) {
-  const token = await getToken({ req });
-  const url = req.nextUrl.clone();
+  // const token = await getToken({ req });
+  // const url = req.nextUrl.clone();
   // console.log(token);
 
   // if (!token) {
