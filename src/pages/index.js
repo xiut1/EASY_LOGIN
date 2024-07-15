@@ -1,18 +1,17 @@
-import React, { useState } from "react";
-
+import React from "react";
 import Head from "next/head";
-// import { Modal } from "@/pages/components/modal";
+import { useRouter } from "next/router";
 
 const Home = () => {
-  // const [on, setOn] = useState(false);
+  const router = useRouter();
+
   return (
     <>
       <Head>
         <title>간편로그인</title>
       </Head>
       <main>
-        {/*<button onClick={() => setOn(true)}>LOGIN</button>*/}
-        {/*<Modal on={on} setOn={setOn} />*/}
+        <button onClick={() => router.push("/login")}>LOGIN</button>
       </main>
     </>
   );

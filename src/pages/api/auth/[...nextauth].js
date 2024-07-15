@@ -4,6 +4,9 @@ import NaverProvider from "next-auth/providers/naver";
 import KakaoProvider from "next-auth/providers/kakao";
 
 export const authOptions = {
+  pages: {
+    signIn: "login",
+  },
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
@@ -18,6 +21,7 @@ export const authOptions = {
       clientSecret: process.env.KAKAO_CLIENT_SECRET,
     }),
   ],
+  callbacks: {},
 };
 
 export default NextAuth(authOptions);
