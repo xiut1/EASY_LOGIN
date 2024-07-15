@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>간편로그인</title>
+        <title>EASY_LOGIN</title>
       </Head>
       <main>
         <button onClick={() => router.push("/login")}>LOGIN</button>

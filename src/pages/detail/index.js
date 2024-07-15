@@ -1,5 +1,6 @@
-import { signOut, useSession } from "next-auth/react";
+import styles from "./detail.module.scss";
 import { useRouter } from "next/router";
+import { signOut, useSession } from "next-auth/react";
 
 export default function Detail() {
   const router = useRouter();
@@ -15,13 +16,18 @@ export default function Detail() {
     <>
       {status !== "loading" && status !== "unauthenticated" && (
         <>
-          <div>
-            <div>
-              <img src={session.user.image} alt="" />
+          <div className={styles.card}>
+            <div className={styles.cardBox}>
+              <img className={styles.cardImg} src={session.user.image} alt="" />
+              <div className={styles.userName}>{session.user.name}</div>
+              <button
+                className={styles.logoutButton}
+                onClick={() => signOut({ callbackUrl: "/" })}
+              >
+                LOGOUT
+              </button>
             </div>
-            <div>{session.user.name}</div>
           </div>
-          <button onClick={() => signOut({ callbackUrl: "/" })}>LOGOUT</button>
         </>
       )}
     </>
