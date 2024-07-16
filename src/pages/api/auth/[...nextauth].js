@@ -28,6 +28,9 @@ export const authOptions = {
     // 2. 토큰에 추가적인 클레임을 넣거나 이 값을 수정하려고 할 때.
     // 3. 인증 과정 도중에 추가적인 작업이 필요할 때 (예를 들어, 회원 가입 과정에서 새 사용자를 DB에 저장하거나, 사용자가 로그인할 때마다 이를 추적하려는 경우).
   },
+  session: {
+    //
+  }
 };
 
 export default NextAuth(authOptions);
