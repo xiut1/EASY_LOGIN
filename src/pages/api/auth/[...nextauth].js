@@ -4,7 +4,9 @@ import NaverProvider from "next-auth/providers/naver";
 import KakaoProvider from "next-auth/providers/kakao";
 
 export const authOptions = {
+  // 애플리케이션의 비밀 키값. NextAuth가 클라이언트와 서버 사이에 보안 세션을 관리하는 데 사용됨.
   secret: process.env.NEXTAUTH_SECRET,
+  // 가용한 인증 제공자를 선언. 각 제공자는 clientId와 clientSecret을 요구함.
   providers: [
     // https://github.com/settings/developers
     GithubProvider({
@@ -22,14 +24,44 @@ export const authOptions = {
       clientSecret: process.env.KAKAO_CLIENT_SECRET,
     }),
   ],
+  // 기본 인증 페이지 대신에 표시될 커스텀 페이지의 경로를 설정
+  pages: {
+    signIn: "/login",
+    error: '/error'
+  },
   callbacks: {
-    // NextAuth에서 인증 프로세스의 여러 단계에서 특정 로직을 실행하도록 할 수 있는 옵션으로
+    // NextAuth에서 인증 프로세스의 여러 단계에서 특정 로직을 실행하도록 할 수 있는 옵션
     // 1. 세션 데이터를 사용자화하거나 작업을 추가하려고 할 때.
     // 2. 토큰에 추가적인 클레임을 넣거나 이 값을 수정하려고 할 때.
     // 3. 인증 과정 도중에 추가적인 작업이 필요할 때 (예를 들어, 회원 가입 과정에서 새 사용자를 DB에 저장하거나, 사용자가 로그인할 때마다 이를 추적하려는 경우).
   },
   session: {
-    //
+    strategy: "database",
+    maxAge: 30 * 24 * 60 * 60, // 30 days
+    updateAge: 24 * 60 * 60, // 24 hours
+  },
+  jwt: {
+
+  },
+  events: {
+    async signIn(message) { /* on successful sign in */ },
+    async signOut(message) { /* on signout */ },
+    async createUser(message) { /* user created */ },
+    async updateUser(message) { /* user updated - e.g. their email was verified */ },
+    async linkAccount(message) { /* account (e.g. Twitter) linked to a user */ },
+    async session(message) { /* session is active */ },
+  },
+  adapter: {
+
+  },
+  debug: {
+
+  },
+  logger: {
+
+  },
+  theme: {
+
   }
 };
 
