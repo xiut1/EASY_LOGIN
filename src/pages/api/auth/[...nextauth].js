@@ -26,43 +26,46 @@ export const authOptions = {
   ],
   // 기본 인증 페이지 대신에 표시될 커스텀 페이지의 경로를 설정
   pages: {
-    signIn: "/login",
-    error: '/error'
+    // signIn: "/login",
+    // error: '/error'
   },
+  // NextAuth에서 인증 프로세스의 여러 단계에서 특정 로직을 실행하도록 할 수 있는 옵션
   callbacks: {
-    // NextAuth에서 인증 프로세스의 여러 단계에서 특정 로직을 실행하도록 할 수 있는 옵션
     // 1. 세션 데이터를 사용자화하거나 작업을 추가하려고 할 때.
     // 2. 토큰에 추가적인 클레임을 넣거나 이 값을 수정하려고 할 때.
     // 3. 인증 과정 도중에 추가적인 작업이 필요할 때 (예를 들어, 회원 가입 과정에서 새 사용자를 DB에 저장하거나, 사용자가 로그인할 때마다 이를 추적하려는 경우).
+    // session: async (session, user) => {
+    //   session.userId = user.id;
+    //   return session;
+    // },
   },
+  // 세션관련 설정. strategy는 세션 관리 전략, maxAge는 세션의 최대 유지시간, updateAge는 세션 데이터가 업데이트 되는 최소 간격을 설정
   session: {
-    strategy: "database",
-    maxAge: 30 * 24 * 60 * 60, // 30 days
-    updateAge: 24 * 60 * 60, // 24 hours
+    // strategy: "jwt", // database
+    // maxAge: 30 * 24 * 60 * 60, // 30 일
+    // updateAge: 24 * 60 * 60, // 24 시간
   },
+  // JSON Web Tokens (JWT) 설정을 위한 옵션
   jwt: {
-
+    // secret: 'YOUR_JWT_SECRET'
   },
+  // NextAuth에서 발생하는 여러 이벤트에 대한 콜백 함수를 정의하는 옵션
   events: {
-    async signIn(message) { /* on successful sign in */ },
-    async signOut(message) { /* on signout */ },
-    async createUser(message) { /* user created */ },
-    async updateUser(message) { /* user updated - e.g. their email was verified */ },
-    async linkAccount(message) { /* account (e.g. Twitter) linked to a user */ },
-    async session(message) { /* session is active */ },
+    // async signIn(message) { /* on successful sign in */ },
+    // async signOut(message) { /* on signout */ },
+    // async createUser(message) { /* user created */ },
+    // async updateUser(message) { /* user updated - e.g. their email was verified */ },
+    // async linkAccount(message) { /* account (e.g. Twitter) linked to a user */ },
+    // async session(message) { /* session is active */ },
   },
-  adapter: {
-
-  },
-  debug: {
-
-  },
-  logger: {
-
-  },
-  theme: {
-
-  }
+  // 데이터 저장을 담당하는 어댑터 설정
+  // adapter: "YOUR_ADAPTER",
+  // 로그 확인을 위한 디버그 옵션
+  // debug: false,
+  // 로그 출력 설정
+  // logger: "YOUR_LOGGER_FUNCTION",
+  // UI theme 설정
+  // theme: "light" // dark
 };
 
 export default NextAuth(authOptions);
