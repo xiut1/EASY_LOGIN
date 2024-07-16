@@ -22,7 +22,7 @@ export default function Detail() {
               <div className={styles.userName}>{session.user.name}</div>
               <button
                 className={styles.logoutButton}
-                onClick={() => signOut({ callbackUrl: "/" })}
+                onClick={() => signOut({ callbackUrl: "/login" })}
               >
                 LOGOUT
               </button>
