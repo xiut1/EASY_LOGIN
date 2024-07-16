@@ -12,6 +12,7 @@ export default function Login() {
           <button
             className={`${styles.loginButton} ${styles.github}`}
             onClick={() => signIn("github", { callbackUrl: "/detail" })}
+            // next-auth의 signIn 메서드를 이용해서 provider과 options를 정해준다.
           >
             GITHUB
           </button>

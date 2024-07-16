@@ -6,14 +6,17 @@ import KakaoProvider from "next-auth/providers/kakao";
 export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
   providers: [
+    // https://github.com/settings/developers
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_ID,
       clientSecret: process.env.GITHUB_CLIENT_SECRET,
     }),
+    // https://developers.naver.com/apps/#/list
     NaverProvider({
       clientId: process.env.NAVER_CLIENT_ID,
       clientSecret: process.env.NAVER_CLIENT_SECRET,
     }),
+    // https://developers.kakao.com/console/app
     KakaoProvider({
       clientId: process.env.KAKAO_CLIENT_ID,
       clientSecret: process.env.KAKAO_CLIENT_SECRET,
