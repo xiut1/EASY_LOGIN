@@ -15,7 +15,7 @@
     max-width: 400px;
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid #dddddd;
+    border: 2px solid #dddddd;
     padding: 20px;
     box-sizing: border-box;
 
@@ -29,13 +29,16 @@
 
     .userName {
       font-size: 24px;
+      font-weight: 700;
       margin-top: 20px;
       text-align: center;
+      text-transform: uppercase;
     }
 
     .logoutButton {
-      margin-top: 20px;
+      margin-top: 40px;
       width: 100%;
+      font-weight: 700;
       background: #ddd;
       border: none;
       padding: 15px;

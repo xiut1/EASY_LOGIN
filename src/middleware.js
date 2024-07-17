@@ -3,7 +3,7 @@ import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 export async function middleware(req) {
-  // 요청에 포함된 URL을 복사하여 'nextUrl' 변수에 저장한다
+  // 요청에 포함된 URL을 복사하여 'nextUrl'에 저장한다
   const nextUrl = req.nextUrl.clone();
   const token = await getToken({ req });
 

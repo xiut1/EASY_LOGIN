@@ -25,6 +25,7 @@
         width: 100%;
         border: none;
         border-radius: 10px;
+        font-weight: 700;
 
         & + .loginButton {
           margin-top: 10px;
@@ -47,6 +48,7 @@
 
     .closeButton {
       width: 100%;
+      font-weight: 700;
       background: #ddd;
       border: none;
       padding: 15px;
