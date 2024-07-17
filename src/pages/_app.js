@@ -1,4 +1,5 @@
 import "@/styles/global.css";
+// 클릭 후 사용 할 수 있는 옵션값 확인 확인 https://next-auth.js.org/getting-started/client#usesession
 import { SessionProvider } from "next-auth/react";
 
 export default function App({ Component, pageProps }) {

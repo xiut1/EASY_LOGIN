@@ -1,8 +1,10 @@
+// next-auth docs : https://next-auth.js.org/getting-started/example
 import NextAuth from "next-auth";
 import GithubProvider from "next-auth/providers/github";
 import NaverProvider from "next-auth/providers/naver";
 import KakaoProvider from "next-auth/providers/kakao";
 
+// next-auth options : https://next-auth.js.org/configuration/options
 export const authOptions = {
   // 애플리케이션의 비밀 키값. NextAuth가 클라이언트와 서버 사이에 보안 세션을 관리하는 데 사용됨.
   secret: process.env.NEXTAUTH_SECRET,
