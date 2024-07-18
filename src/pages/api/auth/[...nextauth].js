@@ -43,11 +43,12 @@ export const authOptions = {
   },
   // 세션관련 설정. strategy는 세션 관리 전략, maxAge는 세션의 최대 유지시간, updateAge는 세션 데이터가 업데이트 되는 최소 간격을 설정
   session: {
-    // strategy: "jwt", // database
+    // strategy: "jwt", // databaseㅊ
     // maxAge: 30 * 24 * 60 * 60, // 30 일
     // updateAge: 24 * 60 * 60, // 24 시간
   },
-  // JSON Web Tokens (JWT) 설정을 위한 옵션
+  // JSON Web Tokens의 약자로 사용자 인증 정보를 안전하게 저장하고 서버와 클라이언트 간에 전달하는 역활을 한다.
+  // 기본적으로 next-auth는 서버 내 메모리에서 세션을 처리하지만, 이를 사용자 지정 JWT를 통해 교체할 수 있습니다.
   jwt: {
     // secret: 'YOUR_JWT_SECRET'
   },
