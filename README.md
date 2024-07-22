@@ -1,6 +1,7 @@
 <h3>세미나 순서</h3>
 <ol>
-    <li><strong>GITHUB REPOSITORY</strong> 생성</li>
+    <li><strong>NEXTJS</strong>프로젝트 생성 <pre>npx create-next-app@latest</pre></li>
+    <li><strong>GITHUB REPOSITORY</strong> 생성 및 연결</li>
     <li><a href="https://app.netlify.com/teams/xiut1/sites"><strong>NETLIFY</strong></a>와 <a href="https://github.com/xiut1/TEST"><strong>GITHUB</strong></a> 연동 </li>
     <li>프로젝트 연결 확인 및 COMMIT, PUSH 이후에 <a href="https://app.netlify.com/sites/shimmering-bonbon-5754cd/deploys">배포</a>되는거 확인</li>
     <li>로그인 구현 되는거 확인</li>

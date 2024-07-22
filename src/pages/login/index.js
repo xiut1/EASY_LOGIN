@@ -11,8 +11,8 @@ export default function Login() {
         <div className={styles.modalCont}>
           <button
             className={`${styles.loginButton} ${styles.github}`}
+            // next-auth의 signIn 메서드를 사용, provider(로그인 제공업체)과 options(callbackUrl, redirect)를 정해준다.
             onClick={() => signIn("github", { callbackUrl: "/detail" })}
-            // next-auth의 signIn 메서드를 이용해서 provider(로그인 제공업체)과 options(callbackUrl, redirect)를 정해준다.
           >
             GITHUB
           </button>
