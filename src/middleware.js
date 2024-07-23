@@ -1,4 +1,4 @@
-// next-auth middleware
+// JWT (JSON Web Token)은 웹 표준 (RFC 7519)으로, 두 개체 사이에서 정보를 안전하게 전송하기 위해 설계된 작고 독립적인 자가 포함된 방식을 제공
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
