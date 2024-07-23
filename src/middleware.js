@@ -12,7 +12,7 @@ export async function middleware(req) {
   if (!token) {
     nextUrl.pathname = "/login";
     return NextResponse.redirect(nextUrl);
-    // NextResponse.redirect('/login')로 사용하면 될거같지만 "/" 부분이 "%2F"로 인코딩되어 에러를 발생시킴.
+    // NextResponse.redirect('/login')로 사용하면 될거같지만 "/" 부분이 "%2F"로 인식되어 malform 에러를 발생시킴.
   }
 }
 

@@ -29,9 +29,9 @@ export default function Login() {
             KAKAO
           </button>
         </div>
-        <button className={styles.closeButton} onClick={() => router.push("/")}>
-          CLOSE
-        </button>
+        {/*<button className={styles.closeButton} onClick={() => router.push("/")}>*/}
+        {/*  CLOSE*/}
+        {/*</button>*/}
       </div>
     </div>
   );
