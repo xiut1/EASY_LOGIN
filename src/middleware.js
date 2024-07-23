@@ -1,9 +1,10 @@
-// JWT (JSON Web Token)은 웹 표준 (RFC 7519)으로, 두 개체 사이에서 정보를 안전하게 전송하기 위해 설계된 작고 독립적인 자가 포함된 방식을 제공
+// middleware : Next.js 12부터 도입되었으며, 페이지나 API 라우트에 대한 들어오는 요청을 가로채는 사용자 정의 함수
+// JSON Web Tokens의 약자로 사용자 인증 정보를 안전하게 저장하고 서버와 클라이언트 간에 전달하는 역활을 한다.
 import { getToken } from "next-auth/jwt";
 import { NextResponse } from "next/server";
 
 export async function middleware(req) {
-  // 요청에 포함된 URL을 복사하여 'nextUrl'에 저장한다
+  // 요청에 포함된 URL을 복사
   const nextUrl = req.nextUrl.clone();
   const token = await getToken({ req });
 
